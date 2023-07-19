@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Add this line
 import './App.css';
 import { getMovie, searchMovie, getMovieUpcoming, getMovieTop_rated } from "./api";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
-import Jumbotron from './components/jumbotron'; //
+import Jumbotron from './components/jumbotron';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -39,15 +41,23 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    console.log("popularMovies:", popularMovies);
+    console.log("upcomingMovies:", upcomingMovies);
+    console.log("topRatedMovies:", topRatedMovies);
+  }, [popularMovies, upcomingMovies, topRatedMovies]);
+
   const PopularMovie = ({ movies }) => {
     return movies.slice(0, visiblePopularMovies).map((movie, i) => {
       return (
         <div className="movie-wrapper" key={i}>
+           <Link to={`/movies/${movie.id}`}>
           <img
             className="movie-image"
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={`Poster ${movie.title}`}
           />
+          </Link>
           <div className="movie-title">{movie.title}</div>
           <div className="movie-content">
             <div className="movie-rating">{renderStars(movie.vote_average)}</div>
@@ -62,11 +72,13 @@ function App() {
     return movies.slice(0, visibleUpcomingMovies).map((movie, i) => {
       return (
         <div className="movie-wrapper" key={i}>
+          <Link to={`/movies/${movie.id}`}>
           <img
             className="movie-image"
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={`Poster ${movie.title}`}
           />
+          </Link>
           <div className="movie-title">{movie.title}</div>
           <div className="movie-content">
             <div className="movie-rating">{renderStars(movie.vote_average)}</div>
@@ -81,11 +93,13 @@ function App() {
     return movies.slice(0, visibleTopRatedMovies).map((movie, i) => {
       return (
         <div className="movie-wrapper" key={i}>
+          <Link to={`/movies/${movie.id}`}>
           <img
             className="movie-image"
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={`Poster ${movie.title}`}
           />
+          </Link>
           <div className="movie-title">{movie.title}</div>
           <div className="movie-content">
             <div className="movie-rating">{renderStars(movie.vote_average)}</div>
@@ -175,6 +189,7 @@ function App() {
           </div>
         )}
       </header>
+      <Footer/>
     </div>
   );
 }

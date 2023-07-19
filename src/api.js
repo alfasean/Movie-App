@@ -23,4 +23,39 @@ export const getMovieTop_rated = async () => {
   return movie.data.results
 }
 
+export const getMovieDetails = async (movieId) => {
+  try {
+    const response = await axios.get(`${endPoint}/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Failed to fetch movie details:', error);
+  }
+};
+
+export const getMovieVideos = async (movieId) => {
+  try {
+    const response = await axios.get(`${endPoint}/movie/${movieId}/videos?api_key=${apiKey}`);
+    return response.data.results;
+  } catch (error) {
+    throw new Error("Failed to fetch movie videos:", error);
+  }
+};
+
+export const getGenres = async () => {
+  try {
+    const response = await axios.get(`${endPoint}/genre/movie/list?api_key=${apiKey}`);
+    return response.data.genres;
+  } catch (error) {
+    throw new Error("Error fetching genres:", error);
+  }
+};
+
+export const getMovieCredits = async (movieId) => {
+  try {
+    const response = await axios.get(`${endPoint}/movie/${movieId}/credits?api_key=${apiKey}`);
+    return response.data;
+  } catch (error) {
+    throw new Error('Failed to fetch movie credits:', error);
+  }
+};
 

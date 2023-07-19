@@ -15,13 +15,22 @@
   color: white;
 }
 
-.slide {
-  margin-top: 10px;
-  width: 100%; 
-  height: 100%;
-  object-fit: cover; 
-  border-radius: 20px;
+.slide-container {
+  position: relative;
+  padding-top: 42.25%; /* 16:9 aspect ratio (e.g., 9/16 = 0.5625 or 56.25%) */
+  overflow: hidden;
 }
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+}
+
 
 .title-movies {
   font-size: 24px;
@@ -145,8 +154,13 @@ input:not(:placeholder-shown) ~ .reset {
   white-space: nowrap; 
   overflow: hidden; 
   text-overflow: ellipsis; 
+  text-align: center;
 }
 
+.movie-genres {
+  font-weight: bold;
+  font-size: 10px;
+}
 
 .movie-date {
   font-weight: bold;
@@ -186,5 +200,100 @@ input:not(:placeholder-shown) ~ .reset {
 .stars-inner::before {
   content: "★★★★★";
   display: block;
+}
+
+.movie-detail {
+  background-color: #03001C;
+}
+
+.movie-video-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.movie-backdrop {
+  width: 100%;
+  height: 350px;
+  background-size: cover;
+  background-position: center;
+}
+
+.movie-video-container iframe {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  margin-right: 10px;
+  scroll-snap-align: start;
+}
+
+.movie-poster {
+  width: 300px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  margin-right: 15px;
+}
+
+.other-movie-banners {
+  display: flex;
+}
+
+.other-movie-banner {
+  width: 200px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.detail-info {
+  margin-top: -200px;
+}
+
+/* .cek {
+  width: 200px;
+} */
+
+.judul {
+  font-size: 44px;
+  width: 100%;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.overview {
+  color: #fff;
+  font-size: 15px;
+  text-align: justify;
+  width: 100%;
+}
+
+.rilis {
+  color: #fff;
+  font-size: 15px;
+}
+
+.genre-movie {
+  background-color: #301E67;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.cast {
+  background-color: #301E67;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.trailer {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
 }
 

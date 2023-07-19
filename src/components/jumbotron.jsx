@@ -21,14 +21,16 @@ function Jumbotron() {
   }, []);
 
   return (
-    <Carousel className='py-2'>
+    <Carousel className='py-2' controls={false} indicators={false} interval={5000}> {/* Mengatur interval menjadi 2 detik */}
       {movies.map((movie, index) => (
         <Carousel.Item key={index}>
-          <img
-            className="d-block w-100 slide"
-            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} // Ganti URL dengan URL gambar dari API movie yang sesuai
-            alt={movie.title}
-          />
+          <div className="slide-container">
+            <img
+              className="d-block slide"
+              src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+              alt={movie.title}
+            />
+          </div>
           <Carousel.Caption>
             <h3>{movie.title}</h3>
             <p>Rating: {movie.vote_average}</p>
