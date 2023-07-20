@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; // Perbarui impor
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import App from './App';
-import MovieDetail from './components/MovieDetail'; // Impor komponen detail film Anda
+import MovieDetail from './components/MovieDetail'; 
 
 ReactDOM.render(
   <Router>
-    <Routes> {/* Gunakan Routes di sini */}
-      <Route path="/" element={<App />} /> {/* Perbarui cara mendefinisikan rute */}
-      <Route path="/movies/:id" element={<MovieDetail />} /> {/* Gunakan element untuk mengatur komponen */}
-      {/* Rute lain jika Anda memiliki */}
+    <Routes> 
+      <Route path="/" element={<App />} />
+      <Route path="/movies/:id" element={<MovieDetail />} /> 
+
     </Routes>
   </Router>,
   document.getElementById('root')

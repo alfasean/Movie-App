@@ -17,7 +17,7 @@
 
 .slide-container {
   position: relative;
-  padding-top: 42.25%; /* 16:9 aspect ratio (e.g., 9/16 = 0.5625 or 56.25%) */
+  padding-top: 35.25%;
   overflow: hidden;
 }
 
@@ -31,6 +31,22 @@
   background-position: center center;
 }
 
+.poster {
+  border-radius: 20px;
+  width: 100%;
+  height: auto;
+}
+
+.hero-judul {
+  font-weight: 700;
+  font-size: 44px;
+  text-align: start;
+}
+
+.hero-overview {
+  font-size: 16px;
+  text-align: justify;
+}
 
 .title-movies {
   font-size: 24px;
@@ -206,11 +222,11 @@ input:not(:placeholder-shown) ~ .reset {
   background-color: #03001C;
 }
 
-.movie-video-container {
+/* .movie-video-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
-}
+} */
 
 .movie-backdrop {
   width: 100%;
@@ -221,11 +237,25 @@ input:not(:placeholder-shown) ~ .reset {
 
 .movie-video-container iframe {
   width: 100%;
-  height: auto;
+  height: 400px;
   border-radius: 20px;
-  margin-right: 10px;
-  scroll-snap-align: start;
+  /* margin-right: 10px; */
+  background-size: cover;
+  background-position: center;
 }
+
+/* .watch-button a {
+  background-color: #FBC50C;
+  border-radius: 10px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.watch-button a:hover {
+  background-color: #B70404;
+  color: #fff;
+
+} */
 
 .movie-poster {
   width: 300px;

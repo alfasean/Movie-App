@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
+import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios'; // Import axios
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import '././../App.css';
 
 function Jumbotron() {
@@ -21,7 +23,7 @@ function Jumbotron() {
   }, []);
 
   return (
-    <Carousel className='py-2' controls={false} indicators={false} interval={5000}> {/* Mengatur interval menjadi 2 detik */}
+    <Carousel className='py-2' controls={false} indicators={false} interval={5000}>
       {movies.map((movie, index) => (
         <Carousel.Item key={index}>
           <div className="slide-container">
@@ -32,9 +34,24 @@ function Jumbotron() {
             />
           </div>
           <Carousel.Caption>
-            <h3>{movie.title}</h3>
-            <p>Rating: {movie.vote_average}</p>
-            <p>Date: {movie.release_date}</p>
+            <div className="d-flex">
+              <div className="wrap-hero mx-3">
+                <h3 className='hero-judul'>{movie.title}</h3>
+                <p className='hero-overview'>{movie.overview}</p>
+                <p className='hero-rating'>{movie.vote_average}</p>
+                <p className='hero-date'>{movie.release_date}</p>
+                <Link to={`/movies/${movie.id}`}>
+                  <Button variant="primary">Detail</Button>
+                </Link>
+              </div>
+              <div className="poster-container ml-auto"> {/* Menggunakan "ml-auto" untuk menggeser poster ke ujung kanan */}
+                <img
+                  className="poster"
+                  src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+                  alt={`Poster ${movie.title}`}
+                />
+              </div>
+            </div>
           </Carousel.Caption>
         </Carousel.Item>
       ))}

@@ -12,7 +12,7 @@ return (
     <footer>
         <div class="footer" style={{backgroundImage: `url(${bg})`}}>
             <div class="row d-flex justify-content-center align-items-center">
-               Copyright © 2023 A-Tvision - All rights reserved || Develop By: Alfa Sean
+              <p>Copyright © 2023 Ba-Uni - All rights reserved <br /> Develop By <a href="https://www.instagram.com/alfaseannnnnn/" target='_blank'> Alfa Sean</a></p> 
             </div>
         </div>
     </footer>

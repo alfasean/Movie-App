@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // Add this line
+import { Link } from 'react-router-dom'; 
 import './App.css';
 import { getMovie, searchMovie, getMovieUpcoming, getMovieTop_rated } from "./api";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -152,7 +152,7 @@ function App() {
     <div className="App">
       <Navbar onSearch={search} />
       <header className="App-header">
-      <Jumbotron /> 
+      {/* <Jumbotron />  */}
         <div className="mt-5 container">
           <h1 className="title-movies">Popular Movies</h1>
         </div>
