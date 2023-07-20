@@ -4,7 +4,6 @@ import './App.css';
 import { getMovie, searchMovie, getMovieUpcoming, getMovieTop_rated } from "./api";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
-import Jumbotron from './components/jumbotron';
 import Footer from './components/footer/Footer';
 
 function App() {
@@ -152,7 +151,6 @@ function App() {
     <div className="App">
       <Navbar onSearch={search} />
       <header className="App-header">
-      {/* <Jumbotron />  */}
         <div className="mt-5 container">
           <h1 className="title-movies">Popular Movies</h1>
         </div>

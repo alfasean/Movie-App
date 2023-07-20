@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate instead of
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import logo from './../Assets/logo.png';
 import './../App.css';
 
 function BasicExample({ onSearch }) {
-  const navigate = useNavigate(); // Use useNavigate hook instead of useHistory
+  const navigate = useNavigate();
 
   const handleSearch = (e) => {
     const query = e.target.value;
@@ -16,7 +15,7 @@ function BasicExample({ onSearch }) {
   };
 
   const handleHomeClick = () => {
-    navigate('/'); // Use navigate function to navigate to home ("/")
+    navigate('/'); 
   };
 
   return (
@@ -30,7 +29,6 @@ function BasicExample({ onSearch }) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {/* <Nav.Link href="/" style={{ color: '#fff' }}>Home</Nav.Link> */}
           </Nav>
           <Navbar.Text>
             <form className="form">

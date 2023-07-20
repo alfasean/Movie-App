@@ -17,7 +17,7 @@ const [popularMovies, setPopularMovies] = useState([]);
 const [visiblePopularMovies, setVisiblePopularMovies] = useState(4);
 
 useEffect(() => {
-// Mengambil informasi detail film berdasarkan ID
+
 const fetchData = async () => {
 try {
 const movieDetails = await getMovieDetails(id);
@@ -69,7 +69,6 @@ setMovie(searchResult.results);
 console.error('Error fetching search result:', error);
 }
 } else {
-// Menampilkan data film sesuai dengan ID jika query tidak memenuhi syarat
 const fetchData = async () => {
 try {
 const movieDetails = await getMovieDetails(id);
@@ -120,7 +119,7 @@ return (
           }}></div>
       </div>
       <div className="container detail-info mb-5">
-        <div className="d-flex justify-content-center align-items-center">
+        <div className="d-flex post-wrap justify-content-center align-items-center">
           {movie.poster_path && (
           <img className="movie-poster" src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={`Poster
             ${movie.title}`} />
@@ -144,7 +143,7 @@ return (
               <h2 className='trailer'>Cast</h2>
               <div className='d-flex'>
                 {cast.map((actor) => (
-                <div className='cast' key={actor.id}>{actor.name}</div>
+                <div className='cast \' key={actor.id}>{actor.name}</div>
                 ))}
               </div>
             </div>
