@@ -160,7 +160,7 @@ return (
               src={`https://www.youtube.com/embed/${video.key}`} allowFullScreen></iframe>
             ))}
 
-            <h2 className="trailer mt-5">Other Movies</h2>
+            <h2 className="trailer mt-5 title-movies">Other Movies</h2>
             <div className="container movie-container">
               {popularMovies.slice(0, visiblePopularMovies).map((movie, index) => (
               <div className="movie-wrapper" key={index}>

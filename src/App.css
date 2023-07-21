@@ -4,6 +4,71 @@
   font-family: "Poppins", sans-serif;
 }
 
+.bauni {
+  margin-top: 20px;
+}
+
+.head {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+}
+
+.header-container {
+  width: 40%;
+  margin-top: 120px;
+}
+
+nav {
+  display: flex;
+}
+
+.hero-judul {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: -2px;
+  margin-bottom: 32px;
+  line-height: 0.9;
+  width: 50%;
+}
+
+.hero-overview {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  width: 50%;
+  text-align: justify;
+}
+
+.hero-rating {
+  color: #FBC50C;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 44px;
+  margin-bottom: 48px;
+
+}
+
+section {
+  padding: 96px 0;
+}
+
+.watch {
+  background-color: #FBC50C !important;
+  color: #fff !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  border-radius: 10px !important;
+}
+
+.watch:hover {
+  background-color: #301E67 !important;
+}
+
 .App-header {
   background-color: #03001C;
   min-height: 100vh;
@@ -60,7 +125,7 @@
 }
 
 .movie-container {
-  width : 100%;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,7 +150,7 @@
 
 .form {
   --timing: 0.3s;
-  --width-of-input: 250px;
+  --width-of-input: 96%;
   --height-of-input: 40px;
   --border-height: 2px;
   --input-bg: #fff;
@@ -100,7 +165,8 @@
   padding-inline: 0.8em;
   border-radius: var(--border-radius);
   transition: border-radius 0.5s ease;
-  background: var(--input-bg,#fff);
+  background: var(--input-bg, #fff);
+  margin-left: 20px;
 }
 
 .input {
@@ -146,7 +212,7 @@ input:focus {
   visibility: hidden;
 }
 
-input:not(:placeholder-shown) ~ .reset {
+input:not(:placeholder-shown)~.reset {
   opacity: 1;
   visibility: visible;
 }
@@ -172,9 +238,9 @@ input:not(:placeholder-shown) ~ .reset {
   padding: 20px;
   font-size: 16px;
   background-color: #03001C;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis; 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   text-align: center;
 }
 
@@ -339,12 +405,16 @@ input:not(:placeholder-shown) ~ .reset {
 
 @media (max-width: 767px) {
   .detail-info {
-    margin-top: -100; 
+    margin-top: -100;
+  }
+
+  .title-movies {
+    text-align: center;
   }
 
   .post-wrap {
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
   }
 
   .movie-poster {
@@ -352,8 +422,17 @@ input:not(:placeholder-shown) ~ .reset {
   }
 
   .info {
-    text-align: center; 
-    margin-top: 20px; 
+    text-align: center;
+    margin-top: 20px;
   }
 }
 
+@media (max-width: 991px) {
+  .hero-judul {
+    width: 100%;
+  }
+
+  .hero-overview {
+    width: 100%;
+  }
+}

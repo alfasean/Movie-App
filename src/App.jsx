@@ -4,7 +4,9 @@ import './App.css';
 import { getMovie, searchMovie, getMovieUpcoming, getMovieTop_rated } from "./api";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
+import Hero from './components/hero';
 import Footer from './components/footer/Footer';
+import SearchBar from './components/SearchBar';
 
 function App() {
   const [popularMovies, setPopularMovies] = useState([]);
@@ -149,10 +151,12 @@ function App() {
 
   return (
     <div className="App">
-      <Navbar onSearch={search} />
+      {/* <Navbar onSearch={search} /> */}
+      <Hero />
       <header className="App-header">
         <div className="mt-5 container">
-          <h1 className="title-movies">Popular Movies</h1>
+        <SearchBar onSearch={search} />
+          <h1 className="title-movies mt-3">Popular Movies</h1>
         </div>
         <div className="container movie-container">
           <PopularMovie movies={popularMovies} />
