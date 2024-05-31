@@ -5,6 +5,7 @@ import { getMovie, searchMovie, getMovieUpcoming, getMovieTop_rated } from "./ap
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from './components/navbar';
 import Hero from './components/hero';
+import Jumbotron from './components/jumbotron';
 import Footer from './components/footer/Footer';
 import SearchBar from './components/SearchBar';
 
@@ -153,6 +154,7 @@ function App() {
     <div className="App">
       {/* <Navbar onSearch={search} /> */}
       <Hero />
+      {/* <Jumbotron /> */}
       <header className="App-header">
         <div className="mt-5 container">
         <SearchBar onSearch={search} />
